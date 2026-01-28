@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Premium Color Palette */
+  --primary: #FF6B00;
+  --primary-light: #FF8533;
+  --primary-dark: #E55A00;
+  --secondary: #800000;
+  --accent: #FFD700;
+  --background: #FFFBF7;
+  --background-alt: #FFF5EB;
+  --text-primary: #2D1810;
+  --text-secondary: #5C4033;
+  --white: #FFFFFF;
+  --border: #E8DDD0;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+/* Hindi text styling */
+.hindi-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  letter-spacing: 0;
+}
+
+/* Decorative border pattern - Premium gradient */
+.border-pattern {
+  background: linear-gradient(90deg,
+      var(--primary) 0%,
+      var(--accent) 25%,
+      var(--primary) 50%,
+      var(--accent) 75%,
+      var(--primary) 100%);
+  height: 3px;
+}
+
+/* Section styling */
+.section-padding {
+  padding: 3.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 4rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 5rem 2rem;
+  }
+}
+
+/* Premium Card styling */
+.card {
+  background: white;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 4px 20px rgba(61, 41, 20, 0.06);
+  border: 1px solid rgba(232, 221, 208, 0.6);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    0 20px 40px rgba(61, 41, 20, 0.12);
+  border-color: rgba(255, 107, 0, 0.2);
+}
+
+/* Premium Map container */
+.map-container {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow:
+    0 4px 20px rgba(61, 41, 20, 0.08),
+    0 12px 40px rgba(61, 41, 20, 0.1);
+  border: 1px solid rgba(232, 221, 208, 0.5);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Premium section backgrounds */
+.section-white {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFBF7 100%);
+}
+
+.section-cream {
+  background: linear-gradient(180deg, #FFFBF7 0%, #FFF5EB 100%);
+}
+
+/* Subtle animation for elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceSlow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 4s ease-in-out infinite;
+}
+
+/* Premium hover effects for links */
+a {
+  transition: color 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(255, 107, 0, 0.2);
+  color: var(--text-primary);
+}
